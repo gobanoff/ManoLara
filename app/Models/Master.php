@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Master extends Model
 {
     use HasFactory;
+
+
+public function getOutfits(){
+
+return $this->hasMany(Outfit::class,'master_id','id');
+
+}
+
 }

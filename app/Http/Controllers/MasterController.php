@@ -69,6 +69,9 @@ class MasterController extends Controller
      */
     public function destroy(Master $master)
     {
+        if ($master->getOutfits()->count()) {
+            return 'Not alowed to erase';
+        }
         $master->delete();
         return redirect()->route('master.index');
     }
