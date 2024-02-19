@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 @extends('layouts.app')
 @section('content')
 
@@ -39,3 +31,5 @@
 </div>
 
 @endsection
+
+@section('title')MASTER INDEX @endsection
