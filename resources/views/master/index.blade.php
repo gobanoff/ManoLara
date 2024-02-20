@@ -12,15 +12,20 @@
          <ul class="list-group">
             @foreach ($masters as $master)
          <li class="list-group-item">
+            <div class="list">
             <a href="{{route('master.edit',$master)}}"> {{$master->name}} {{$master->surname}}</a>
+
+            <div class="buttons">
+
+            <a href="{{route('master.edit',$master)}}"class="btn btn-outline-primary"> EDIT</a>
+
             <form action="{{route('master.destroy',$master)}}" method="post">
          
-             
              @csrf
-             <button type="submit"class="btn btn-danger">DELETE</button>
+             <button type="submit"class="btn btn-outline-danger">DELETE</button>
              </form>
-            
-            <br>
+            </div>
+            </div>
          </li>
          @endforeach
             </ul>

@@ -1,1 +1,27 @@
-.card-header{color:rgb(17, 208, 6);font-size: 20px;font-style: italic;}
+.card-header {
+    color: rgb(17, 208, 6);
+    font-size: 20px;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+}
+.list a {
+    font-size: 25px;
+    font-style: italic;
+    text-decoration: none;
+}
+.btn {
+    font-weight: 700;transform: rotate(10deg);
+}
+.buttons a {
+    font-style: normal;
+    font-size: 15px;
+    height: 38px;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
