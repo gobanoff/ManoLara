@@ -7,7 +7,7 @@
       <div class="col-md-8">
          <div class="card">
 
-         <div class="card-header">OUTFIT INDEX</div>
+         <div class="card-header">OUTFIT LIST</div>
          <div class="card-body">@foreach ($outfits as $outfit)
             <a href="{{route('outfit.edit',[$outfit])}}"> {{$outfit->type}} {{$outfit->color}}</a>
          {{$outfit->getMaster->name}} {{$outfit->getMaster->surname}}

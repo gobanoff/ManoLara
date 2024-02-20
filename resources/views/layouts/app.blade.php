@@ -50,27 +50,27 @@
                             @endif
                         @else
 
-                        <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Masters</a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="{{route('master.index')}}"> Masters List </a>
-                        <a class="dropdown-item" href="{{route('master.create')}}"> New Master </a>
-                        </div>
-                        </li>
+                        
 
                         <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Outfits</a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="{{route('outfit.index')}}"> Outfits List </a>
-                        <a class="dropdown-item" href="{{route('outfit.create')}}"> New Outfit </a>
-                         </div>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Masters</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{route('master.index')}}">Masters List</a></li>
+                                <li><a class="dropdown-item" href="{{route('master.create')}}">New Master</a></li>
+                            </ul>
                         </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">Outfits</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">
+                                <li><a class="dropdown-item" href="{{route('outfit.index')}}">Outfits List</a></li>
+                                <li><a class="dropdown-item" href="{{route('outfit.create')}}">New Outfit</a></li>
+                            </ul>
+                        </li>
+                        
+
+
+
 
 
 
