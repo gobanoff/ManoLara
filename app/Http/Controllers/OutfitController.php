@@ -73,7 +73,7 @@ class OutfitController extends Controller
      */
     public function edit(Outfit $outfit)
     {
-        $masters = Master::all();
+        $masters = Master::orderBy('surname')->get();
         return view('outfit.edit', ['outfit' => $outfit, 'masters' => $masters]);
     }
 

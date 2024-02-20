@@ -14,7 +14,8 @@ class MasterController extends Controller
      */
     public function index()
     {
-        $masters = Master::all();
+        // $masters = Master::all();
+        $masters = Master::orderBy('surname')->get();
         return view('master.index', ['masters' => $masters]);
     }
 

@@ -18,19 +18,23 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Faker::create('fr_FR');
         $mastersCount = 20;
+
         foreach (range(1, 20) as $_) {
+
             DB::table('masters')->insert([
                 'name' => $faker->firstName(),
                 'surname' => $faker->lastName(),
             ]);
         }
 
-        $outfits = ['Jacket','Shorts','Shirts','Coat','Pantes','Hat','Gloves','Skirt','Jeans'];
+        $outfits = ['Jacket', 'Shorts', 'Shirts', 'Coat', 'Pantes', 'Hat', 'Gloves', 'Skirt', 'Jeans'];
+
         foreach (range(1, 200) as $_) {
+            
             DB::table('outfits')->insert([
-                'type' => $outfits[rand(0,count($outfits)-1)],
+                'type' => $outfits[rand(0, count($outfits) - 1)],
                 'color' => $faker->safeColorName(),
-                'size' => rand(5,22),
+                'size' => rand(5, 22),
                 'about' => $faker->paragraph(5),
                 'master_id' => rand(1, $mastersCount)
 
