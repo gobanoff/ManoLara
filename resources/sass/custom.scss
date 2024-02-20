@@ -13,7 +13,8 @@
     text-decoration: none;
 }
 .btn {
-    font-weight: 700;transform: rotate(10deg);
+    font-weight: 700;
+    transform: rotate(5deg);
 }
 .buttons a {
     font-style: normal;
@@ -24,4 +25,22 @@
     display: flex;
     justify-content: center;
     gap: 40px;
+}
+p {
+    color: rgb(79, 183, 149);
+    font-size: 25px;
+    font-style: italic;
+}
+input {
+    border-radius: 5px;
+}
+small {
+    color: rgb(181, 42, 149);
+    font-size: 20px;
+    font-style: italic;
+}
+label {
+    color: blue;
+    font-size: 20px;
+    font-weight: 700;
 }

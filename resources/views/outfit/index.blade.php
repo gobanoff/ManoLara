@@ -8,21 +8,25 @@
          <div class="card">
 
          <div class="card-header">OUTFIT LIST</div>
-         <div class="card-body">@foreach ($outfits as $outfit)
-            <a href="{{route('outfit.edit',[$outfit])}}"> {{$outfit->type}} {{$outfit->color}}</a>
-         {{$outfit->getMaster->name}} {{$outfit->getMaster->surname}}
-            
-            <form action="{{route('outfit.destroy',[$outfit])}}" method="post">
-         
-             
-             @csrf
-             <button type="submit">DELETE</button>
-             </form>
-            
-            <br>
-         
-         @endforeach</div>
 
+         <div class="card-body">
+            <ul class="list-group">
+            @foreach ($outfits as $outfit)
+            <li class="list-group-item">
+               <div class="list">
+            <a href="{{route('outfit.edit',[$outfit])}}"> {{$outfit->type}} {{$outfit->color}}</a>
+            <p> {{$outfit->getMaster->name}} {{$outfit->getMaster->surname}}</p>
+            <div class="buttons">
+            <a href="{{route('outfit.edit',$outfit)}}"class="btn btn-outline-primary"> EDIT</a>
+            <form action="{{route('outfit.destroy',[$outfit])}}" method="post">
+             @csrf
+             <button type="submit"class="btn btn-outline-danger">DELETE</button>
+             </form>
+            </div>
+             </div>
+            </li>
+         @endforeach</div>
+      </ul>
 
          </div>
       </div>

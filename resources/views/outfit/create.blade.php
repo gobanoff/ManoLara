@@ -9,19 +9,45 @@
     
          <div class="card-header">OUTFIT CREATE</div>
          <div class="card-body"><form action="{{route('outfit.store')}}" method="post">
+            <div class="form-group">
 
-            Type: <input type="text" name="outfit_type">
-            Color: <input type="text" name="outfit_color">
-            Size: <input type="text" name="outfit_size">
-            About: <textarea name ="outfit_about"></textarea>
-           <select name ="master_id">
+            <label> Type :</label>
+            <input type="text" name="outfit_type"class="form-control">
+            <small class="form-text text-muted" >Enter type</small>
+         </div>
+         <div class="form-group">
+
+            <label> Color :</label>
+             <input type="text" name="outfit_color"class="form-control">
+            <small class="form-text text-muted" >Enter color</small>
+         </div>
+         <div class="form-group">
+
+            <label> Size :</label>
+             <input type="text" name="outfit_size"class="form-control">
+             <small class="form-text text-muted" >Enter size</small>
+
+         </div>
+         <div class="form-group">
+            <label> About :</label>
+             <textarea name ="outfit_about"class="form-control"></textarea>
+            <small class="form-text text-muted" >Enter text</small>
+         </div>
+
+         <div class="form-group">
+
+           <select name ="master_id"class="form-control">
         @foreach ($masters as $master)
         <option value="{{$master->id}}">{{$master->name}} {{$master->surname}}</option>
         @endforeach
            </select>
-        
+           <small class="form-text text-muted" >select master</small>
+         </div>
+
             @csrf
-            <button type="submit">ADD</button>
+            
+            <button type="submit"class="btn btn-outline-warning">ADD</button>
+         
             </form></div>
     
     
