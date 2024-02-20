@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Master;
 use App\Http\Requests\StoreMasterRequest;
 use App\Http\Requests\UpdateMasterRequest;
+use Validator;
 
 class MasterController extends Controller
 {
@@ -30,6 +31,17 @@ class MasterController extends Controller
      */
     public function store(StoreMasterRequest $request)
     {
+
+        $validator = Validator::make($request->all(), [
+            'master_name' => ['required', 'min:3', 'max:64'],
+            'master_surname' => ['required', 'min:3', 'max:64'],
+        ]);
+
+        if ($validator->fails()) {
+            $request->flash();
+            return redirect()->back()->withErrors($validator);
+        }
+
         $master = new Master;
         $master->name = $request->master_name;
         $master->surname = $request->master_surname;
@@ -58,6 +70,19 @@ class MasterController extends Controller
      */
     public function update(UpdateMasterRequest $request, Master $master)
     {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'master_name' => ['required', 'min:3', 'max:64'],
+                'master_surname' => ['required', 'min:3', 'max:64'],
+            ]
+        );
+
+        if ($validator->fails()) {
+            $request->flash();
+            return redirect()->back()->withErrors($validator);
+        }
+
         $master->name = $request->master_name;
         $master->surname = $request->master_surname;
         $master->save();
@@ -73,6 +98,6 @@ class MasterController extends Controller
             return  redirect()->back()->with('info_message', 'it is not allowed');
         }
         $master->delete();
-        return redirect()->route('master.index')->with('danger_message', 'The master has deleted');
+        return redirect()->route('master.index')->with('danger_message', 'The master  deleted');
     }
 }
