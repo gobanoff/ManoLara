@@ -24,7 +24,7 @@ class OutfitController extends Controller
      */
     public function create()
     {
-        $masters = Master::all();
+        $masters = Master::orderBy('surname')->get();
         return view('outfit.create', ['masters' => $masters]);
     }
 

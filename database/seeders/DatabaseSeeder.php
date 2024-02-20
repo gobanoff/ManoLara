@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         $outfits = ['Jacket', 'Shorts', 'Shirts', 'Coat', 'Pantes', 'Hat', 'Gloves', 'Skirt', 'Jeans'];
 
         foreach (range(1, 200) as $_) {
-            
+
             DB::table('outfits')->insert([
                 'type' => $outfits[rand(0, count($outfits) - 1)],
                 'color' => $faker->safeColorName(),
