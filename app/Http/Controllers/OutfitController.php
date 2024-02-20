@@ -40,7 +40,7 @@ class OutfitController extends Controller
         $outfit->master_id = $request->master_id;
         $outfit->save();
 
-        return redirect()->route('outfit.index');
+        return redirect()->route('outfit.index')->with('success_message', 'The outfit created');
     }
 
     /**
@@ -72,7 +72,7 @@ class OutfitController extends Controller
         $outfit->master_id = $request->master_id;
         $outfit->save();
 
-        return redirect()->route('outfit.index');
+        return redirect()->route('outfit.index')->with('success_message', 'The outfit was updated');
     }
 
     /**
@@ -81,6 +81,6 @@ class OutfitController extends Controller
     public function destroy(Outfit $outfit)
     {
         $outfit->delete();
-        return redirect()->route('outfit.index');
+        return redirect()->route('outfit.index')->with('danger_message', 'The outfit was deleted');
     }
 }

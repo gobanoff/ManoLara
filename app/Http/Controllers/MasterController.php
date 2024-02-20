@@ -34,7 +34,7 @@ class MasterController extends Controller
         $master->name = $request->master_name;
         $master->surname = $request->master_surname;
         $master->save();
-        return redirect()->route('master.index');
+        return redirect()->route('master.index')->with('success_message', 'New master has arrived');
     }
 
     /**
@@ -61,7 +61,7 @@ class MasterController extends Controller
         $master->name = $request->master_name;
         $master->surname = $request->master_surname;
         $master->save();
-        return redirect()->route('master.index');
+        return redirect()->route('master.index')->with('success_message', 'The master was updated');
     }
 
     /**
@@ -70,9 +70,9 @@ class MasterController extends Controller
     public function destroy(Master $master)
     {
         if ($master->getOutfits()->count()) {
-            return 'Not alowed to erase';
+            return  redirect()->back()->with('info_message', 'it is not allowed');
         }
         $master->delete();
-        return redirect()->route('master.index');
+        return redirect()->route('master.index')->with('danger_message', 'The master has deleted');
     }
 }
