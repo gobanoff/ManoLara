@@ -4,8 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
-import { createApp } from 'vue';
+import "./bootstrap";
+import { createApp } from "vue";
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -15,8 +15,8 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+import ExampleComponent from "./components/ExampleComponent.vue";
+app.component("example-component", ExampleComponent);
 
 /**
  * The following block of code may be used to automatically register your
@@ -36,5 +36,11 @@ app.component('example-component', ExampleComponent);
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
-window.$ = window.jQuery = require('jquery');
+app.mount("#app");
+window.$ = window.jQuery = require("jquery");
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.querySelector("[name=outfit_about]")) {
+        $("[name=outfit_about]").summernote();
+    }
+});
