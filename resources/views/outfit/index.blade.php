@@ -48,12 +48,13 @@
                      <div class="form-group">
 
                         <select name ="master_id"class="form-control">
+                           <option value="0"disabled selected>Select Master</option>
                      @foreach ($masters as $master)
-                     <option value="{{$master->id}}" @if (old('master_id')==$master_id) selected @endif>
+                     <option value="{{$master->id}}" @if ($master_id == $master->id) selected @endif>
                         {{$master->name}} {{$master->surname}}</option>
                      @endforeach
                         </select>
-                        <i class="f" >select master</i>
+                        
                       </div>
                        
                         <button type="submit"class="btn btn-outline-info"name="filter"value="master">Master</button>
@@ -62,6 +63,24 @@
                      </div>
                   </fieldset>
                      </form>
+
+
+                     <form action="{{route('outfit.index')}}" method="get">
+                        <fieldset>
+                           <legend>search</legend>
+                                
+                                    
+                                 <div class="form-group">
+            
+                                    <input class="form-control"type="text"name="s"id="s">
+                                    <button type="submit"class="btn btn-outline-info"name="search"value="all">Search</button>
+                                  </div>
+                                   
+                                      
+                        
+                                 
+                              </fieldset>
+                                 </form>
 
 
 

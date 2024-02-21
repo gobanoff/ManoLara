@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Faker::create('fr_FR');
+        $faker = Faker::create('it_IT');
         $mastersCount = 20;
 
         foreach (range(1, 20) as $_) {

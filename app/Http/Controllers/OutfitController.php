@@ -33,6 +33,10 @@ class OutfitController extends Controller
             }
         } else if ($request->filter && 'master' == $request->filter) {
             $outfits = Outfit::where('master_id', $request->master_id)->get();
+        } else if ($request->search && 'all' == $request->search) {
+            $outfits = Outfit::where('color', 'like', '%' . $request->s . '%')->
+            orWhere('type', 'like', '%' . $request->s . '%')->
+            orWhere('size', 'like', '%' . $request->s . '%')->get();
         } else {
             $outfits = Outfit::all();
         }
@@ -41,7 +45,7 @@ class OutfitController extends Controller
 
         return view('outfit.index', [
             'outfits' => $outfits, 'masters' => $masters,
-            'master_id' => $master_id, 'sortDirection' => $request->sort_dir ?? 'asc'
+            'master_id' => $request->$master_id ?? '0', 'sortDirection' => $request->sort_dir ?? 'asc'
         ]);
     }
 
