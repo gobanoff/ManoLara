@@ -14,9 +14,9 @@
    <legend>sort</legend>
         <div class="butt-sort">
             <div class="sortbtn">
-                <button type="submit"class="btn btn-outline-warning"name="type"value="type">Type</button>
-                <button type="submit"class="btn btn-outline-warning"name="color"value="color">Color</button>
-                <button type="submit"class="btn btn-outline-warning"name="size"value="size">Size</button>
+                <button type="submit"class="btn btn-outline-warning"name="sort"value="type">Type</button>
+                <button type="submit"class="btn btn-outline-warning"name="sort"value="color">Color</button>
+                <button type="submit"class="btn btn-outline-warning"name="sort"value="size">Size</button>
             </div>
 
            <div class="radiobtn">
