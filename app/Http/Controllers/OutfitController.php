@@ -13,7 +13,7 @@ class OutfitController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(UpdateOutfitRequest $request)
+    public function index(StoreOutfitRequest $request)
     {
         if ($request->sort) {
             if ('type' == $request->sort && 'asc' == $request->sort_dir) {

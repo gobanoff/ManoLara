@@ -7,15 +7,17 @@
       <div class="col-md-8">
          <div class="card">
 
-    <div class="card-header">OUTFIT LIST
+    <div class="card-header">O U T F I T - l i s t
 
+        <form action="{{route('outfit.index')}}" method="get">
+<fieldset>
+   <legend>sort</legend>
         <div class="butt-sort">
             <div class="sortbtn">
                 <button type="submit"class="btn btn-outline-warning"name="type"value="type">Type</button>
                 <button type="submit"class="btn btn-outline-warning"name="color"value="color">Color</button>
                 <button type="submit"class="btn btn-outline-warning"name="size"value="size">Size</button>
             </div>
-
 
            <div class="radiobtn">
               <div class="form-check">
@@ -32,12 +34,11 @@
                 </div>
             </div>
 
-            
                <a href="{{route('outfit.index')}}"class="btn btn-outline-info">Reset</a>
 
-
          </div>
-
+      </fieldset>
+         </form>
    </div>
 
          <div class="card-body">
@@ -45,7 +46,7 @@
             @foreach ($outfits as $outfit)
             <li class="list-group-item">
                <div class="list">
-            <a href="{{route('outfit.edit',[$outfit])}}"> {{$outfit->type}} {{$outfit->color}}, size:{{$outfit->size}}</a>
+            <span> type: <b> {{$outfit->type}} </b> color: <b> {{$outfit->color}} </b> size: <b>{{$outfit->size}} </b></span>
             <p> {{$outfit->getMaster->name}} {{$outfit->getMaster->surname}}</p>
             <div class="buttons">
             <a href="{{route('outfit.edit',$outfit)}}"class="btn btn-outline-primary"> EDIT</a>
