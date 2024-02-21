@@ -31,12 +31,12 @@ class OutfitController extends Controller
             } else {
                 $outfits = Outfit::all();
             }
-        }else {
+        } else {
             $outfits = Outfit::all();
         }
 
-        
-        return view('outfit.index', ['outfits' => $outfits,'sortDirection'=>$request->sort_dir ?? 'asc']);
+
+        return view('outfit.index', ['outfits' => $outfits, 'sortDirection' => $request->sort_dir ?? 'asc']);
     }
 
     /**
