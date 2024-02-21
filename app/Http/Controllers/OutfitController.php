@@ -31,12 +31,18 @@ class OutfitController extends Controller
             } else {
                 $outfits = Outfit::all();
             }
+        } else if ($request->filter && 'master' == $request->filter) {
+            $outfits = Outfit::where('master_id', $request->master_id)->get();
         } else {
             $outfits = Outfit::all();
         }
+        $masters = Master::all();
+        $master_id = request()->input('master_id');
 
-
-        return view('outfit.index', ['outfits' => $outfits, 'sortDirection' => $request->sort_dir ?? 'asc']);
+        return view('outfit.index', [
+            'outfits' => $outfits, 'masters' => $masters,
+            'master_id' => $master_id, 'sortDirection' => $request->sort_dir ?? 'asc'
+        ]);
     }
 
     /**

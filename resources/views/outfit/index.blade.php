@@ -22,13 +22,13 @@
            <div class="radiobtn">
               <div class="form-check">
                  <input class="form-check-input"type="radio"name="sort_dir"id="sort_a"
-                 value="asc"@if('desc'!== $sortDirection)checked @endif>
+                  value="asc"@if('desc'!== $sortDirection)checked @endif>
 
                  <label class="form-check-label" for="sort_a">a_z</label>
                </div>
                <div class="form-check">
                   <input class="form-check-input"type="radio"name="sort_dir"id="sort_z"
-                  value="desc"@if('desc'== $sortDirection)checked @endif>
+                   value="desc"@if('desc'== $sortDirection)checked @endif>
 
                   <label class="form-check-label" for="sort_z">z_a</label>
                 </div>
@@ -39,6 +39,41 @@
          </div>
       </fieldset>
          </form>
+
+         <form action="{{route('outfit.index')}}" method="get">
+            <fieldset>
+               <legend>filter by</legend>
+                    <div class="butt-filter">
+                        
+                     <div class="form-group">
+
+                        <select name ="master_id"class="form-control">
+                     @foreach ($masters as $master)
+                     <option value="{{$master->id}}" @if (old('master_id')==$master_id) selected @endif>
+                        {{$master->name}} {{$master->surname}}</option>
+                     @endforeach
+                        </select>
+                        <i class="f" >select master</i>
+                      </div>
+                       
+                        <button type="submit"class="btn btn-outline-info"name="filter"value="master">Master</button>
+                          
+            
+                     </div>
+                  </fieldset>
+                     </form>
+
+
+
+
+
+
+
+
+
+
+
+
    </div>
 
          <div class="card-body">
