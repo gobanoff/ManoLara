@@ -13,10 +13,30 @@ class OutfitController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(UpdateOutfitRequest $request)
     {
-        $outfits = Outfit::all();
-        return view('outfit.index', ['outfits' => $outfits]);
+        if ($request->sort) {
+            if ('type' == $request->sort && 'asc' == $request->sort_dir) {
+                $outfits = Outfit::orderBy('type')->get();
+            } else if ('type' == $request->sort && 'desc' == $request->sort_dir) {
+                $outfits = Outfit::orderBy('type', 'desc')->get();
+            } else if ('color' == $request->sort && 'asc' == $request->sort_dir) {
+                $outfits = Outfit::orderBy('color')->get();
+            } else if ('color' == $request->sort && 'desc' == $request->sort_dir) {
+                $outfits = Outfit::orderBy('color', 'desc')->get();
+            } else if ('size' == $request->sort && 'asc' == $request->sort_dir) {
+                $outfits = Outfit::orderBy('size')->get();
+            } else if ('size' == $request->sort && 'desc' == $request->sort_dir) {
+                $outfits = Outfit::orderBy('size', 'desc')->get();
+            } else {
+                $outfits = Outfit::all();
+            }
+        }else {
+            $outfits = Outfit::all();
+        }
+
+        
+        return view('outfit.index', ['outfits' => $outfits,'sortDirection'=>$request->sort_dir ?? 'asc']);
     }
 
     /**

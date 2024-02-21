@@ -49,3 +49,22 @@ label {
 .alert {
     margin-right: 500px;
 }
+.sortbtn {
+    display: flex;
+    gap: 50px;
+}
+.butt-sort {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;gap: 150px;
+}
+
+.btn-outline-warning {
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.btn-outline-info {
+    height: 40px;
+    font-size: 20px;
+}
