@@ -110,3 +110,43 @@ i {
 .pg {
     padding-left: 180px;
 }
+
+.show {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+    color: blueviolet;
+}
+.list1 {
+    display: flex;
+    justify-content: space-around;
+}
+.show1 {
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+    color: rgb(226, 43, 43);
+}
+.list2 {
+    color: rgb(164, 158, 158);
+    font-size: 22px;
+    padding-top: 20px;
+    font-style: italic;
+}
+.list3 {border: 1px solid black;
+    margin-right: 30px;
+    margin-top: 5px;
+    width: 25px;
+    height: 25px;
+}
+.show2 {
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+    color: rgb(28, 15, 15);
+}
