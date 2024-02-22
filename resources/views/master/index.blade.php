@@ -8,7 +8,7 @@
          <div class="card">
 
          <div class="card-header">MASTER LIST</div>
-         <div class="card-body">
+         <div class="card-body"> <div class="pg">  {{$masters->links()}} </div>
          <ul class="list-group">
             @foreach ($masters as $master)
          <li class="list-group-item">

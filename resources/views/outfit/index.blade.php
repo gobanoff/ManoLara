@@ -105,7 +105,9 @@
             <span> type: <b> {{$outfit->type}} </b> color: <b> {{$outfit->color}} </b> size: <b>{{$outfit->size}} </b></span>
             <p> {{$outfit->getMaster->name}} {{$outfit->getMaster->surname}}</p>
             <div class="buttons">
+               <a href="{{route('outfit.show',$outfit)}}"class="btn btn-outline-warning">SHOW</a>
             <a href="{{route('outfit.edit',$outfit)}}"class="btn btn-outline-primary"> EDIT</a>
+
             <form action="{{route('outfit.destroy',[$outfit])}}" method="post">
              @csrf
              <button type="submit"class="btn btn-outline-danger">DELETE</button>
