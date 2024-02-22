@@ -11,15 +11,14 @@
                     <div class="card-body"> 
          
                       <div class="list1">
-                         <div class="show">  Color : <b class="show2"> {{$outfit->color}} </b></div>
-                         <div class="list3"style="background:{{$outfit->color}} ;"></div>
+                         <div class="show">  Color : <b class="show2"> {{$outfit->color}} </b> 
+                         <div class="list3"style="background:{{$outfit->color}} ;"></div></div>
+                        
                          <div class="show">  Size : <b class="show1">{{$outfit->size}} </b></div>
                          <div class="show"> {{$outfit->type}} Master : <b class="show1">{{$outfit->getMaster->name}} {{$outfit->getMaster->surname}}</b></div>
                       </div>
 
-                      <div class="list2">
-                        {{$outfit->about}}
-                      </div>
+                      <div class="list2">{{$outfit->about}}</div>
                       <a href="{{route('outfit.edit',$outfit)}}"class="btn btn-outline-primary"> EDIT</a>
 
 
