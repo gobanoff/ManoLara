@@ -95,7 +95,9 @@
 
    </div>
 
-         <div class="card-body">
+         <div class="card-body"> 
+            <div class="pg">  {{$outfits->links()}} </div>
+            
             <ul class="list-group">
             @foreach ($outfits as $outfit)
             <li class="list-group-item">
@@ -113,7 +115,7 @@
             </li>
          @endforeach</div>
       </ul>
-
+   <div class="pg">  {{$outfits->links()}} </div>
          </div>
       </div>
    </div>

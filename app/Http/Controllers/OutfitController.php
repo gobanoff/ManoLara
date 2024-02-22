@@ -18,27 +18,27 @@ class OutfitController extends Controller
     {
         if ($request->sort) {
             if ('type' == $request->sort && 'asc' == $request->sort_dir) {
-                $outfits = Outfit::orderBy('type')->paginate(self::page);
+                $outfits = Outfit::orderBy('type')->paginate(self::page)->withQueryString();
             } else if ('type' == $request->sort && 'desc' == $request->sort_dir) {
-                $outfits = Outfit::orderBy('type', 'desc')->paginate(self::page);
+                $outfits = Outfit::orderBy('type', 'desc')->paginate(self::page)->withQueryString();
             } else if ('color' == $request->sort && 'asc' == $request->sort_dir) {
-                $outfits = Outfit::orderBy('color')->paginate(self::page);
+                $outfits = Outfit::orderBy('color')->paginate(self::page)->withQueryString();
             } else if ('color' == $request->sort && 'desc' == $request->sort_dir) {
-                $outfits = Outfit::orderBy('color', 'desc')->paginate(self::page);
+                $outfits = Outfit::orderBy('color', 'desc')->paginate(self::page)->withQueryString();
             } else if ('size' == $request->sort && 'asc' == $request->sort_dir) {
-                $outfits = Outfit::orderBy('size')->paginate(self::page);
+                $outfits = Outfit::orderBy('size')->paginate(self::page)->withQueryString();
             } else if ('size' == $request->sort && 'desc' == $request->sort_dir) {
-                $outfits = Outfit::orderBy('size', 'desc')->paginate(self::page);
+                $outfits = Outfit::orderBy('size', 'desc')->paginate(self::page)->withQueryString();
             } else {
                 $outfits = Outfit::paginate(self::page);
             }
         } else if ($request->filter && 'master' == $request->filter) {
-            $outfits = Outfit::where('master_id', $request->master_id)->paginate(self::page);
+            $outfits = Outfit::where('master_id', $request->master_id)->paginate(self::page)->withQueryString();
         } else if ($request->search && 'all' == $request->search) {
             $outfits = Outfit::where('color', 'like', '%' . $request->s . '%')->
-            orWhere('type', 'like', '%' . $request->s . '%')->orWhere('size', 'like', '%' . $request->s . '%')->paginate(self::page);
+            orWhere('type', 'like', '%' . $request->s . '%')->orWhere('size', 'like', '%' . $request->s . '%')->paginate(self::page)->withQueryString();
         } else {
-            $outfits = Outfit::paginate(self::page);
+            $outfits = Outfit::paginate(self::page)->withQueryString();
         }
         $masters = Master::all();
         $master_id = request()->input('master_id');
