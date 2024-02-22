@@ -7,7 +7,9 @@
 
 
  <style>
-
+ .show {
+   padding-top: 20px;
+    }
     .list2 {
         color: rgb(214, 181, 13);
         font-size: 22px;
