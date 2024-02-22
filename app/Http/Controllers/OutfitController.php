@@ -7,7 +7,7 @@ use App\Models\Outfit;
 use App\Http\Requests\StoreOutfitRequest;
 use App\Http\Requests\UpdateOutfitRequest;
 use Validator;
-
+use PDF;
 class OutfitController extends Controller
 {
     const page = 10;
@@ -151,5 +151,10 @@ class OutfitController extends Controller
     {
         $outfit->delete();
         return redirect()->route('outfit.index')->with('danger_message', 'The outfit  deleted');
+    }
+    public function pdf(Outfit $outfit)
+    {
+        $pdf = PDF::loadView('outfit.pdf',['outfit'=>$outfit]);
+        return $pdf->download($outfit->color.'-'.$outfit->type.'.pdf');
     }
 }
