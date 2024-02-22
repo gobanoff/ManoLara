@@ -70,7 +70,7 @@
                            <legend>search</legend>
                                 
                                     
-                                 <div class="form-group">
+                                 <div class="form-group"id="sch">
             
                                     <input class="form-control"type="text"name="s"id="s">
                                     <button type="submit"class="btn btn-outline-info"name="search"value="all">Search</button>

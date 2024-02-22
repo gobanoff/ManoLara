@@ -8,12 +8,13 @@ use App\Http\Requests\UpdateMasterRequest;
 use Validator;
 
 class MasterController extends Controller
-{const page = 5;
+{
+    const page = 5;
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {     
+    {
         // $masters = Master::all();
         $masters = Master::orderBy('surname')->paginate(self::page);
         return view('master.index', ['masters' => $masters]);

@@ -35,8 +35,7 @@ class OutfitController extends Controller
         } else if ($request->filter && 'master' == $request->filter) {
             $outfits = Outfit::where('master_id', $request->master_id)->paginate(self::page)->withQueryString();
         } else if ($request->search && 'all' == $request->search) {
-            $outfits = Outfit::where('color', 'like', '%' . $request->s . '%')->
-            orWhere('type', 'like', '%' . $request->s . '%')->orWhere('size', 'like', '%' . $request->s . '%')->paginate(self::page)->withQueryString();
+            $outfits = Outfit::where('color', 'like', '%' . $request->s . '%')->orWhere('type', 'like', '%' . $request->s . '%')->orWhere('size', 'like', '%' . $request->s . '%')->paginate(self::page)->withQueryString();
         } else {
             $outfits = Outfit::paginate(self::page)->withQueryString();
         }
@@ -95,7 +94,7 @@ class OutfitController extends Controller
      */
     public function show(Outfit $outfit)
     {
-        return view('outfit.show',['outfit'=>$outfit]);
+        return view('outfit.show', ['outfit' => $outfit]);
     }
 
     /**
