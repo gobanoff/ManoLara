@@ -8,6 +8,7 @@ use App\Http\Requests\StoreOutfitRequest;
 use App\Http\Requests\UpdateOutfitRequest;
 use Validator;
 use PDF;
+
 class OutfitController extends Controller
 {
     const page = 10;
@@ -79,6 +80,17 @@ class OutfitController extends Controller
         }
 
         $outfit = new Outfit;
+        $file = $request->file('outfit_photo');
+        $ext = $file->getClientOriginalExtension();
+        $name = rand(1000000, 9999999) . '_' . rand(1000000, 9999999);
+        $name =$name.'.' . $ext;
+        $destinationPath = public_path() . '/outfits1/';
+        $file->move($destinationPath, $name);
+        $outfit->photo = asset('/outfits1/' . $name);
+
+
+
+
         $outfit->type = $request->outfit_type;
         $outfit->color = $request->outfit_color;
         $outfit->size = $request->outfit_size;
@@ -154,7 +166,7 @@ class OutfitController extends Controller
     }
     public function pdf(Outfit $outfit)
     {
-        $pdf = PDF::loadView('outfit.pdf',['outfit'=>$outfit]);
-        return $pdf->download($outfit->color.'-'.$outfit->type.'.pdf');
+        $pdf = PDF::loadView('outfit.pdf', ['outfit' => $outfit]);
+        return $pdf->download($outfit->color . '-' . $outfit->type . '.pdf');
     }
 }

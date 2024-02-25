@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('type',50);
             $table->string('color',20);
             $table->integer('size');
+            $table->string('photo',200)->nullable();
             $table->text('about');
             $table->unsignedBigInteger('master_id');
             $table->foreign('master_id')->references('id')->on('masters');

@@ -49,7 +49,7 @@
 
         <div class="list2">{{$outfit->about}}</div>
        
-
+     
 
 
 

@@ -25,7 +25,7 @@
                        <a href="{{route('outfit.edit',$outfit)}}"class="btn btn-outline-primary"> EDIT</a>
                        <a href="{{route('outfit.pdf',$outfit)}}"class="btn btn-outline-primary"> PDF</a>
 
-
+                       <div class="list2"><img src="{{$outfit->photo}}"alt="{{$outfit->type}}"></div>
 
 
                     </div>  

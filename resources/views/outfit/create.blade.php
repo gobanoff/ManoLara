@@ -8,7 +8,8 @@
              <div class="card">
     
          <div class="card-header">OUTFIT CREATE</div>
-         <div class="card-body"><form action="{{route('outfit.store')}}" method="post">
+         <div class="card-body">
+            <form action="{{route('outfit.store')}}" method="post"enctype = "multipart/form-data">
             <div class="form-group">
 
             <label> Type :</label>
@@ -33,7 +34,11 @@
              <textarea name ="outfit_about"class="form-control"></textarea>
             <small class="form-text text-muted" >Enter text</small>
          </div>
-
+         <div class="form-group">
+            <label> Photo :</label>
+            <input type="file" name="outfit_photo"class="form-control">
+            <small class="form-text text-muted" >Enter photo</small>
+         </div>
          <div class="form-group">
 
            <select name ="master_id"class="form-control">
