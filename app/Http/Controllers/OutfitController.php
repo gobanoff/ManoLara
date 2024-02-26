@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Intervention\Image\Facades\Image;
 use App\Models\Master;
 use App\Models\Outfit;
 use App\Http\Requests\StoreOutfitRequest;

@@ -46,10 +46,10 @@
            <b class="show1">{{$outfit->getMaster->name}} {{$outfit->getMaster->surname}}</b></div>
 
         </div>
-
-        <div class="list2">{{$outfit->about}}</div>
        
-     
+        <div class="list2">{{$outfit->about}}</div>
+        <div class="list2"><img src="{{$outfit->photo}}"alt="{{$outfit->type}}"></div>
+       
 
 
 
