@@ -83,7 +83,7 @@ class OutfitController extends Controller
         $file = $request->file('outfit_photo');
         $ext = $file->getClientOriginalExtension();
         $name = rand(1000000, 9999999) . '_' . rand(1000000, 9999999);
-        $name =$name.'.' . $ext;
+        $name = $name . '.' . $ext;
         $destinationPath = public_path() . '/outfits1/';
         $file->move($destinationPath, $name);
         $outfit->photo = asset('/outfits1/' . $name);
